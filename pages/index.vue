@@ -1,63 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        income-reader
-      </h1>
-      <h2 class="subtitle">
-        Welcome to the iView + Nuxt.js template
-      </h2>
-      <div class="links">
-        <Button type="primary" target="_blank" to="https://nuxtjs.org/">
-          Documentation
-        </Button>
-        <Button target="_blank" to="https://github.com/nuxt/nuxt.js">
-          GitHub
-        </Button>
-        <Button target="_blank" to="https://www.iviewui.com/">
-          iView
-        </Button>
-      </div>
-    </div>
+    <div style="padding: 10px;background: #f8f8f9">
+<van-panel title="标题" desc="描述信息" status="状态">
+  <div>
+    <van-grid square>
+  <van-grid-item
+    v-for="value in 8"
+    :key="value"
+    icon="photo-o"
+    text="文字"
+  />
+</van-grid>
   </div>
+  <div slot="footer">
+    <van-button size="small">按钮</van-button>
+    <van-button size="small" type="danger">按钮</van-button>
+  </div>
+</van-panel>
+<van-goods-action>
+  <van-goods-action-button type="warning" text="加入购物车" @click="onClickButton" />
+  <van-goods-action-button type="danger" text="立即购买" @click="onClickButton" />
+</van-goods-action>
+    </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-export default {
-  components: {
-    Logo
-  }
-}
+    export default {
+        data () {
+            return {
+                switchValue: true
+            }
+        },
+    }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links {
-  padding-top: 15px;
-}
-</style>
